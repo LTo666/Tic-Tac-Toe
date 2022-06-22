@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="turn-bar">
+        <div class="turns">
+          <span class="Xturn">Cross's Turn</span>
+          <span class="Oturn">Circle's Turn</span>
+          <div class="slider"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="field" id="1"></div>
+        <div class="field" id="2"></div>
+        <div class="field" id="3"></div>
+        <div class="field" id="4"></div>
+        <div class="field" id="5"></div>
+        <div class="field" id="6"></div>
+        <div class="field" id="7"></div>
+        <div class="field" id="8"></div>
+        <div class="field" id="9"></div>
+      </div>
+
+      <div class="restart-btn justify-center">
+        <button id="reload-btn" class="btn">Restart</button>
+      </div>
+    </div>
+
+    <div class="result justify-center">
+      <div class="msg">Cross win!</div>
+      <div class="justify-center">
+        <button id="play-again-btn" class="btn">Play Again</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

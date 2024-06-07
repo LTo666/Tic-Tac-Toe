@@ -6,6 +6,10 @@ $(function () {
   let isWin = false
   let turnsElem = $(".turns")
   let isEndGame = false
+  const result = {
+    cross: 0,
+    circle: 0,
+  }
 
   let possibleCombinations = [
     "147",
@@ -100,6 +104,14 @@ $(function () {
       }
       $('.msg').html(`${symbol} wins!`)
       $('.result').addClass('show')
+
+      const classKeyMap = {
+        Cross: '.Xscore',
+        Circle: '.Oscore'
+      }
+      const classKey = classKeyMap[symbol]
+      result[symbol.toLowerCase()]++
+      $(classKey).html(result[symbol.toLowerCase()])
       isEndGame = true
     }
   }
@@ -109,6 +121,10 @@ $(function () {
   $('#play-again-btn').click(function () {
      restart() 
      $('.result').removeClass('show')
+  })
+
+  $('#reset-score-btn').click(function () {
+    resetScore()
   })
 
   const restart = () => {
@@ -121,5 +137,12 @@ $(function () {
     circles = []
     isWin = false
     isEndGame = false
+  }
+
+  const resetScore = () => {
+    result.cross = 0
+    result.circle = 0
+    $('.Xscore').html(result.cross)
+    $('.Oscore').html(result.circle)
   }
 })

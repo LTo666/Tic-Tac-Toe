@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: rgb(176, 214, 255);
+  font-family: Arial;
 }
 
 .app {
@@ -17,11 +18,30 @@ body {
   justify-content: center;
 }
 
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scoreBar {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5rem;
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+.Oscore {
+  color: #edc760;
+}
+
 .turn-bar {
   margin-bottom: 2rem;
   padding: 16px;
   border-radius: 5px;
   background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
 }
 .turns {
   width: 100%;
@@ -55,7 +75,7 @@ body {
   color: #fff;
 }
 
-.turns.swc span:first-child {
+.turns.swc span:first-child, .Xscore {
   color: red;
 }
 .turns.swc span:nth-child(2) {
@@ -124,7 +144,12 @@ body {
   background-image: url("./images/circle.png");
 }
 
+.restart-btn {
+  gap: 1rem;
+}
+
 .btn {
+  flex: 1 1;
   background: none;
   color: #566fed;
   border: 0.25rem solid #566fed;
@@ -135,15 +160,16 @@ body {
   cursor: pointer;
 }
 
+#play-again-btn {
+  padding: 1rem 3rem;
+  flex: 0 0 auto;
+}
+
 .btn:hover {
   background: #566fed;
   color: white;
   transform: scale(1.2);
   transition: all 0.3s ease;
-}
-
-#reload-btn {
-  padding-inline: 6rem;
 }
 
 .result {
@@ -167,7 +193,7 @@ body {
 
 .result.show {
   opacity: 1;
-  background-color: hsla(0, 0%, 100%, 0.8);
+  background-color: hsla(0, 0%, 100%);
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -181,6 +207,11 @@ body {
 @media screen and (min-width: 320px) and (max-width: 700px) {
   .turn-bar {
     padding: 8px;
+    gap: 0.5rem;
+  }
+
+  .scoreBar {
+    font-size: 2rem;
   }
 
   .turns span {
@@ -210,7 +241,6 @@ body {
   #reload-btn {
     padding-inline: 4rem;
   }
-  
 
   .result {
     width: 17rem;
